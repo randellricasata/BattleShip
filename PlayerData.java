@@ -23,6 +23,14 @@ public class PlayerData{
 		}
 	}
 	
+	public void setAGrid (int row, int column, int value) {
+		aGrid[row][column] = value;
+	}
+	
+	public void setSGrid (int row, int column, int value) {
+		sGrid[row][column] = value;
+	}
+	
 	public void setNumShips(int x) {
 		this.numShips = x;
 	}

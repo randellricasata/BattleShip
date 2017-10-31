@@ -8,15 +8,14 @@ import java.net.*;
 Represents the player's own grid
 */
 public class AttackGrid extends BattleGrid {
-	
+	PlayerData player;
 	int grid[][] = new int [10][10];
-    public AttackGrid(String name) {
+    public AttackGrid(String name, PlayerData p) {
         super();
-        
     }
 
     @Override
-    protected JPanel getCell()
+    protected JPanel getCell(int i, int j)
     {
         JPanel panel = new JPanel();
         panel.setBackground(Color.white);
@@ -24,11 +23,9 @@ public class AttackGrid extends BattleGrid {
         panel.setPreferredSize(new Dimension(40, 40)); // for demo purposes only
         panel.addMouseListener(new MouseAdapter() {
         	public void mouseClicked(MouseEvent e) {
-        		panel.setBackground(Color.green);
+        			panel.setBackground(Color.green);
         	}
         });
-        
-        
         
         return panel;
     }

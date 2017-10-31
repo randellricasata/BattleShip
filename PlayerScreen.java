@@ -31,8 +31,8 @@ public class PlayerScreen extends JFrame {
         p.add(enemyShipsSunk);
         p.add(dEnemyShipsSunk);
         
-        this.add(new SelfGrid(name), BorderLayout.EAST);
-        this.add(new AttackGrid(name), BorderLayout.WEST);
+        this.add(new SelfGrid(name, player), BorderLayout.EAST);
+        this.add(new AttackGrid(name, player), BorderLayout.WEST);
         this.add(new JLabel(name), BorderLayout.NORTH);
         this.add(p, BorderLayout.SOUTH);
         
