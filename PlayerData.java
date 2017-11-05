@@ -1,12 +1,14 @@
-
 public class PlayerData{
 	private int aGrid[][] = new int [10][10];
 	private int sGrid[][] = new int [10][10];
 	
 	private String name;
-	private int numShips = 0;
-	private int numSelfSinkShips = 0;
-	private int numEnemySinkShips = 0;
+	
+	int numShips;
+	int numSelfSinkShips;
+	int numEnemySinkShips;
+	
+	
 	
 	public PlayerData(String name) {
 		this.name = name;
@@ -21,8 +23,24 @@ public class PlayerData{
 				sGrid[i][j] = 0;
 			}
 		}
+		
+		numShips = 0;
+		numSelfSinkShips = 0;
+		numEnemySinkShips = 0;
+		
 	}
 	
+	public int[][] getAGrid(){
+		return this.aGrid;
+	}
+	
+	public int[][] getSGrid(){
+		return this.sGrid;
+	}
+	
+	public int SGridContent(int i, int j) {
+		return sGrid[i][j];
+	}
 	public void setAGrid (int row, int column, int value) {
 		aGrid[row][column] = value;
 	}
@@ -35,6 +53,10 @@ public class PlayerData{
 		this.numShips = x;
 	}
 	
+	
+	public String getName() {
+		return this.name;
+	}
 	public void setSelfSinkShips(int x) {
 		this.numSelfSinkShips = x;
 	}

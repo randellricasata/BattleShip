@@ -5,14 +5,15 @@ import java.io.*;
 import java.net.*;
 
 public abstract class BattleGrid extends JPanel {
+	PlayerData pl;
 	
-	
-    public BattleGrid() {
+    public BattleGrid(PlayerData p) {
+    	pl = p;
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         JPanel self = new JPanel();
         self.setLayout(new GridLayout(0,10));
         for (int i = 0; i < 10; i++)
-            for(int j =0; j < 10; j++) {
+            for(int j = 0; j < 10; j++) {
                 self.add(getCell(i, j));
             }
         this.add(self);
